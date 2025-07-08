@@ -1,0 +1,19 @@
+{
+  "name": "ottometric",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --workers=1 --reporter=list,allure-playwright && allure generate ./allure-results --clean && allure open ./allure-report",
+    "test:headed": "npx playwright test --headed --workers=1 --reporter=list,allure-playwright && allure generate ./allure-results --clean && allure open ./allure-report"
+  },
+  "keywords": [],
+  "author": "Stefana Tomić",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.53.2",
+    "@types/node": "^24.0.10",
+    "allure-playwright": "^3.3.0"
+  }
+}
