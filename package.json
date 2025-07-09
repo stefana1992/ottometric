@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test --workers=1 --reporter=list,allure-playwright && allure generate ./allure-results --clean && allure open ./allure-report",
-    "test:headed": "npx playwright test --headed --workers=1 --reporter=list,allure-playwright && allure generate ./allure-results --clean && allure open ./allure-report"
+    "test:headed": "npx playwright test --headed --workers=1 --reporter=list,allure-playwright && allure generate ./allure-results --clean && allure open ./allure-report",
+    "test:kpiLanes": "npx playwright test tests/kpi-sensor-lanes.spec.ts --reporter=list,allure-playwright && allure generate ./allure-results --clean && allure open ./allure-report",
+    "test:kpiZone1": "npx playwright test tests/kpi-feature-zone1.spec.ts --reporter=list,allure-playwright && allure generate ./allure-results --clean && allure open ./allure-report"
   },
   "keywords": [],
   "author": "Stefana Tomić",

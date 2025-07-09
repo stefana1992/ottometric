@@ -34,3 +34,9 @@ If you want to run test locally, please follow these steps:
 5. Now you can run tests with ```npm run test``` - it will execute Playwright tests sequentially, generate an Allure report, and open it in your browser
 
 6. If you want to run it in headed mode, then run tests with ```npm run test:headed```
+
+7. If you want to run a specific test file, use one of the following:
+
+- ```npm run test:kpiLanes```
+
+- ```npm run test:kpiZone1```

@@ -9,10 +9,13 @@ export class LoginPage {
 
     constructor(page: Page) {
         this.page = page;
+
         // Locator for the email input field
         this.emailInput = this.page.locator('input[name="email"]');
+
         // Locator for the password input field
         this.passwordInput = this.page.locator('input[name="password"]');
+
         // Locator for the login button
         this.loginButton = this.page.locator("[data-testid='otto-login-btn']");
     }
@@ -36,5 +39,4 @@ export class LoginPage {
     async clickLogin() {
         await this.loginButton.click();
     }
-
 }

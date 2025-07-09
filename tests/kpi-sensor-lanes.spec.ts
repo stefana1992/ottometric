@@ -1,13 +1,13 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
-import { loginForm } from '../data/login-form';
 import { ProgramSelector } from '../pages/ProgramSelector';
 import { ProgramName } from '../data/programs';
 import { SidebarMenu } from '../pages/SidebarMenu';
 import { KpiLanesPage } from '../pages/KpiLanesPage';
+import { loginToApp } from '../utils/testSetup';
 
 
-test.describe('Validate KPI Lanes table column totals', () => {
+test.describe('KPI Sensor - Lanes test', () => {
 
     let loginPage: LoginPage;
     let programSelector: ProgramSelector;
@@ -21,13 +21,10 @@ test.describe('Validate KPI Lanes table column totals', () => {
         kpiLanesPage = new KpiLanesPage(page);
 
         //Login to the application
-        await loginPage.navigateTo();
-        await loginPage.fillEmail(loginForm.validCredentials.email);
-        await loginPage.fillPassword(loginForm.validCredentials.password);
-        await loginPage.clickLogin();
+        await loginToApp(page);
     });
 
-    test('Validate column totals in KPI Lanes table', async () => {
+    test('Test 1: KPI Lanes - Validate column totals', async () => {
         //Select program 'Camera System VT1'
         await programSelector.selectProgram(ProgramName.VT1);
 
