@@ -27,12 +27,12 @@ export class KpiLanesPage {
             const cell = bodyRows.nth(rowIndex).locator('td').nth(columnIndex);
 
             const rawText = await cell.textContent();
-            // Trim the text to remove any leading/trailing whitespace, fallback to empty string if nul
+            // Trim the text to remove any leading/trailing whitespace, fallback to empty string if null
             const text = (rawText ? rawText.trim() : '');
 
 
             if (text.endsWith('%')) {
-                // Trim the text to remove any leading/trailing whitespace, fallback to empty string if nul
+                // Trim the text to remove any leading/trailing whitespace, fallback to empty string if null
                 const value = parseFloat(text.replace('%', ''));
                 // Check if the parsed value is a valid number, then add to array
                 if (!isNaN(value)) {
